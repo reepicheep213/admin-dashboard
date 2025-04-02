@@ -45,10 +45,6 @@ svg {
   gap: 1rem;
 }
 
-.search-area svg {
-
-}
-
 .search-bar {
   background-color: #e2e8f0;
   border: none;
@@ -78,7 +74,7 @@ input[type="search"]:focus {
 }
 
 .user-area div {
-  font-size: 18px;
+  font-size: 1.15rem;
   white-space: nowrap;
 }
 
@@ -104,7 +100,7 @@ input[type="search"]:focus {
 }
 
 .user-welcome div:last-child { 
-  font-size: 22px;
+  font-size: 1.4rem;
   white-space: nowrap;
 
   align-self: start;
@@ -143,7 +139,7 @@ input[type="search"]:focus {
 }
 
 .sidebar div {
-  font-size: 21px;
+  font-size: 1.3rem;
 }
 
 .sidebar-title svg {
@@ -151,7 +147,7 @@ input[type="search"]:focus {
 }
 
 .sidebar-title div {
-  font-size: 26px;
+  font-size: 1.65rem;
 }
 
 .primary-links li,
@@ -175,60 +171,99 @@ input[type="search"]:focus {
   justify-self: center;
 }
 
+/* last section */
 .main-content {
   background-color: #e2e8f0;
-  grid-row: 2;
+  padding: 1.5rem;
+  grid-row: 1.8rem;
+
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 1.3rem;
+}
+
+.projects-content {
+  grid-row: 1;
+  grid-column: 1;
+  height: min-content;
 
   display: grid;
 }
 
-.your-projects {
-  grid-column: 1;
+.main-content-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.8rem 0;
+  /* height: min-content; */
+}
 
+.projects {
+  grid-row: 2;
+  
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 375px));
+  gap: 1.5rem;
+  align-content: start;
 }
 
 .project-card {
-  background-color: #ffffff;
+  max-height: 200px;
+  border-left: 0.5rem solid #f0b429;
   
+  display: grid;
+}
+
+.project-card,
+.announcements-card,
+.trending-card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.projects > div,
+.side-content > div {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.card-text {
+  color: #656565;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.project-card-icon {
+  justify-self: end;
+  align-self: end;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1.5rem;
+}
+
+.project-card-icon > svg {
+
 }
 
 .side-content {
-  grid-column: 2;
+  height: min-content;
 
   display: grid;
+  /* row-gap: 1rem; */
+  grid-template: min-content 1fr min-content 1fr / 275px;
 }
 
-.announcements {
-  display: grid;
+.announcements-card,
+.trending-card {
+  height: 325px;
 }
 
-.article {
-  background-color: #ffffff;
+/* project card doesn't get smaller in width as window gets smaller */
 
-}
+/* prevent project card from getting shorter in height as window shortens */
 
-.trending {
-  display: grid;
-}
+/* shortening the window height cuts off the sidebar once it reaches the cards */
 
-.username {
-  background-color: #ffffff;
-
-}
-
-/* colors */
-/* .main,
-.search-field {
-  background-color: #e2e8f0;
-} */
-
-/* .sidebar,
-.button {
-  background-color: #1a92d4;
-} */
-
-/* .project {
-  card-accent-color: #f0b429; // what is this called?
-  color: #656565
-} */
+/* get trending card to align with bottom of the project card? */
