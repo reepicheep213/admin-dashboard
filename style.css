@@ -4,23 +4,9 @@
   padding: 0;
 }
 
-ul {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-svg {
-  height: 1.5rem;
-  width: auto;
-}
-
 .container {
   display: grid;
-  grid-template: 175px 5fr / minmax(300px, 1fr) 5fr;
+  grid-template: min-content min-content / minmax(300px, 1fr) 5fr;
 }
 
 .header {
@@ -32,7 +18,7 @@ svg {
   grid-column: 2;
 
   display: grid;
-  grid-template: min-content 1fr / 2fr 1fr;
+  grid-template: min-content min-content / 2fr 1fr;
   gap: 0.8rem 2rem;
 }
 
@@ -127,9 +113,8 @@ input[type="search"]:focus {
 
 .sidebar {
   background-color: #1a92d4;
-  height: 100vh;
   padding: 1.5rem;
-  color: #ffffff;
+  color: hsl(0, 0%, 100%);
   grid-row: 1 / 3;
 
   display: grid;
@@ -137,6 +122,21 @@ input[type="search"]:focus {
   align-items: start;
   row-gap: 3rem;
 }
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+svg {
+  height: 1.5rem;
+  width: auto;
+}
+
 
 .sidebar div {
   font-size: 1.3rem;
@@ -171,11 +171,10 @@ input[type="search"]:focus {
   justify-self: center;
 }
 
-/* last section */
 .main-content {
   background-color: #e2e8f0;
   padding: 1.5rem;
-  grid-row: 1.8rem;
+  height: min-content;
 
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -185,32 +184,28 @@ input[type="search"]:focus {
 .projects-content {
   grid-row: 1;
   grid-column: 1;
-  height: min-content;
 
   display: grid;
+  grid-template-rows: min-content auto;
 }
 
 .main-content-heading {
   font-size: 1.2rem;
   font-weight: 700;
   padding: 0.8rem 0;
-  /* height: min-content; */
 }
 
 .projects {
-  grid-row: 2;
-  
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 375px));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
-  align-content: start;
 }
 
 .project-card {
-  max-height: 200px;
   border-left: 0.5rem solid #f0b429;
-  
-  display: grid;
+
+  grid-template-rows: min-content 2fr min-content;
+  row-gap: 0.2rem;
 }
 
 .project-card,
@@ -219,7 +214,7 @@ input[type="search"]:focus {
   background-color: #ffffff;
   border-radius: 0.5rem;
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 1.5rem;
 
   display: grid;
 }
@@ -249,26 +244,23 @@ input[type="search"]:focus {
   height: min-content;
 
   display: grid;
-  /* row-gap: 1rem; */
   grid-template: min-content 1fr min-content 1fr / 274px;
 }
-
-/* .announcements-card,
-.trending-card {
-  height: 325px;
-} */
 
 .article-heading {
   font-size: 0.9rem;
   border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 1rem;
 }
 
 .article-heading p {
   font-size: 0.75rem;
+  padding-top: 0.2rem;
 }
 
 .article-3 {
   border-bottom: none;
+  padding-bottom: none; 
 }
 
 .side-content p {
@@ -281,8 +273,14 @@ input[type="search"]:focus {
     row-gap: 1rem;
 }
 
+.announcements-card {
+  margin-bottom: 1.5rem;
+}
+
 .user-list {
   font-size: 0.9rem;
+  font-weight: 400;
+  height: 50px;
 
   display: grid;
   grid-template: 1fr 1fr / 1fr 3fr;
@@ -311,15 +309,3 @@ input[type="search"]:focus {
   background-color: #fda4af;
   border-radius: 25px;
 }
-
-/* trending user handles shouldn't be bolded */
-
-/* need more space between side-content sections */
-
-/* project card doesn't get smaller in width as window gets smaller */
-
-/* prevent project card from getting shorter in height (when content doesn't fill up card) as window shortens */
-
-/* shortening the window height cuts off the sidebar once it reaches the cards */
-
-/* get trending card to align with bottom of the project card? */
